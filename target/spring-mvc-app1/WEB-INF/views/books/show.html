@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<a th:text="${book.getName()}"></a>
+<a th:text=", ${book.getAuthor()}"></a><br>
+<a th:text=", ${book.getAge()}"></a><br>
+<a th:text=", ${book.getId()}"></a><br>
+
+<label for="person">select person</label>
+<select th:object="${person}" th:field="id" id=""></select>
+
+<br>
+<hr>
+<a th:href="@{/books/{id}/edit(id=${book.getId()})}" >Update!</a>
+<br>
+<hr>
+<form th:methoc="DELETE" action="@{/books/{id}/delete(id=${book.getId()})}">
+<input type="submit" value="Delete!"></form>
+</body>
+</html>
